@@ -1,0 +1,21 @@
+
+
+.homepage-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
+ 
+}
+
+.homepage-images img {
+  width: 25vw;
+  height: 20vw;
+  margin: 10px;
+}
+
+
+
+.homepage-images p {
+  margin-top: 0;
+  margin-left: 25px;
+}

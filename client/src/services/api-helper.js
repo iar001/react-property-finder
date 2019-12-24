@@ -37,3 +37,25 @@ export const createProperty = async (data) => {
   const resp = await api.post('/properties', { property: data })
   return resp.data
 }
+
+export const showProperties = async () => {
+  const resp = await api.get('/properties')
+  return resp.data
+}
+
+export const updateProperty = async (id, data) => {
+  const resp = await api.put(`/properties/${id}`, { review: data })
+  return resp.data
+}
+
+export const destroyProperty = async (id) => {
+  const resp = await api.delete(`/properties/${id}`)
+  return resp.data
+}
+
+
+//////users poperties/////
+export const userProperties = async (id) => {
+  const resp = await api.get(`/users/${id}/properties`)
+  return resp.data
+}

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Link, withRouter, Route } from 'react-router-dom';
-import { createProperty } from '../services/api-helper';
+import { updateProperty, destroyProperty } from '../services/api-helper';
 
-class CreateProperty extends Component {
+class EditProperty extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -14,25 +14,36 @@ class CreateProperty extends Component {
         rooms: 0,
         bathrooms: 0,
         photo: ""
-      }
+      },
+      property: []
     }
   }
 
-  newProperty = async (e) => {
-    e.preventDefault();
-    const property = await createProperty(this.state.propertyForm);
+  updateProperty = async (e) => {
+    e.preventDefault()
+    const propertyForm = this.state.propertyForm
+    const property = await updateProperty(this.props.match.params.propertyId, propertyForm)
     this.setState(prevState => ({
       properties: [...prevState.properties, property],
       propertyForm: {
         name: "",
         address: "",
-        price: "",
-        rooms: "",
-        bathrooms: "",
+        price: 0,
+        rooms: 0,
+        bathrooms: 0,
         photo: ""
       }
     }))
   }
+
+  deleteProperty = async () => {
+    await destroyProperty(this.props.match.params.propertyId);
+    this.setState(prevState => ({
+      properties: prevState.properties.filter(property => property.id !== this.props.match.params.propertyId)
+    }))
+  }
+
+
 
   handleChange = (e) => {
     const { name, value } = e.target;
@@ -51,9 +62,9 @@ class CreateProperty extends Component {
       <div className="wrapper">
 
         <div className="auth-container">
-          <h1>Add Property</h1>
+          <h1>Update Property</h1>
           <hr />
-          <form onSubmit={this.newProperty} >
+          <form onSubmit={this.updateProperty} >
             <p>Property Name:</p>
             <input
               name="name"
@@ -67,7 +78,7 @@ class CreateProperty extends Component {
               name="address"
               type="text"
               value={this.state.propertyForm.address}
-              placeholder="Address"
+              placeholder="address"
               onChange={this.handleChange} />
 
             <p>Price:</p>
@@ -75,7 +86,7 @@ class CreateProperty extends Component {
               name="price"
               type="text"
               value={parseInt(this.state.propertyForm).price}
-              placeholder="Price"
+              placeholder="price"
               onChange={this.handleChange} />
 
             <p>Rooms:</p>
@@ -83,7 +94,7 @@ class CreateProperty extends Component {
               name="rooms"
               type="text"
               value={parseInt(this.state.propertyForm).rooms}
-              placeholder="Rooms"
+              placeholder="rooms"
               onChange={this.handleChange} />
 
             <p>Bathrooms:</p>
@@ -91,7 +102,7 @@ class CreateProperty extends Component {
               name="bathrooms"
               type="text"
               value={parseInt(this.state.propertyForm).bathrooms}
-              placeholder="Bathrooms"
+              placeholder="bathrooms"
               onChange={this.handleChange} />
 
             <p>Photo:</p>
@@ -103,7 +114,7 @@ class CreateProperty extends Component {
               onChange={this.handleChange} />
 
 
-            <button>Create Property</button>
+            <button>Update Property</button>
           </form>
         </div>
       </div>
@@ -112,4 +123,4 @@ class CreateProperty extends Component {
   }
 }
 
-export default withRouter(CreateProperty)
+export default withRouter(EditProperty)

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import { Button, Navbar } from 'react-bootstrap';
 
 class Header extends Component {
   constructor(props) {
@@ -50,7 +49,9 @@ class Header extends Component {
                 <>
 
                   <div class="nav-link">
-                    <li>Hello, {this.props.currentUser.username}</li>
+                    <Link to="/profile/:userid">
+                      <li>Hello, {this.props.currentUser.username}</li>
+                    </Link>
                   </div>
 
                   <div class="nav-link">

@@ -9,6 +9,7 @@ import Register from './components/Register'
 import Header from './components/Header';
 import Homepage from './components/Homepage'
 import Dashboard from './components/Dashboard'
+import EditProperty from './components/EditProperty'
 
 class App extends Component {
   constructor(props) {
@@ -89,9 +90,18 @@ class App extends Component {
 
         <Route exact path="/" render={() => (
           <Homepage
+            currentUser={this.state.currentUser}
           />
         )}
         />
+
+        <Route exact path="/editproperty/" render={() => (
+          <EditProperty
+          />
+        )}
+        />
+
+
 
         <Route exact path="/login" render={() => (
           <Login

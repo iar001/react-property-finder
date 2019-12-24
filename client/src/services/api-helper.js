@@ -30,3 +30,10 @@ export const verifyUser = async () => {
   }
   return false
 }
+
+///////Properties////////
+
+export const createProperty = async (data) => {
+  const resp = await api.post('/properties', { property: data })
+  return resp.data
+}

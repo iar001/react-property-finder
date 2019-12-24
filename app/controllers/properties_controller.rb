@@ -1,23 +1,26 @@
 class PropertiesController < ApplicationController
   before_action :set_property, only: [:show, :update, :destroy]
+  before_action :authorize_request, except: %i[index show]
+
+
 
   # GET /properties
   def index
     @properties = Property.all
 
-    render json: @properties
+    render json: @properties, include: :user
   end
 
   # GET /properties/1
   def show
-    render json: @property
+    render json: @property, include: :user
   end
 
   # POST /properties
   def create
     @property = Property.new(property_params)
 
-    if @property.save
+    if @current_user.properties << @property
       render json: @property, status: :created, location: @property
     else
       render json: @property.errors, status: :unprocessable_entity

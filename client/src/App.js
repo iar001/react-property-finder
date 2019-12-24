@@ -6,7 +6,9 @@ import { Route, Link, withRouter } from 'react-router-dom';
 import { loginUser, registerUser, verifyUser } from './services/api-helper';
 import Login from './components/Login';
 import Register from './components/Register'
-import Homepage from './components/Homepage';
+import Header from './components/Header';
+import Homepage from './components/Homepage'
+import Dashboard from './components/Dashboard'
 
 class App extends Component {
   constructor(props) {
@@ -73,10 +75,22 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Homepage
+        <Header
           currentUser={this.state.currentUser}
           handleLogout={this.handleLogout}
-          
+        />
+
+        <Route path="/dashboard" render={() => (
+          <Dashboard
+            currentUser={this.state.currentUser}
+          />
+        )}
+        />
+
+        <Route exact path="/" render={() => (
+          <Homepage
+          />
+        )}
         />
 
         <Route exact path="/login" render={() => (

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authorize_request, except: [:create,:show]
+  before_action :authorize_request, except: [:create,:show, :index_by_properties]
   before_action :set_user, only: [:show, :update, :destroy]
 
   # GET /users
@@ -14,6 +14,12 @@ class UsersController < ApplicationController
     render json: @user
   end
 
+  def index_by_properties
+    @user = User.find(params[:user_id])
+    @properties = @user.properties
+    render json: @properties, status: :ok
+  end
+  
   # POST /users
   def create
     @user = User.new(user_params)

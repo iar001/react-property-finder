@@ -10,6 +10,7 @@ import Header from './components/Header';
 import Homepage from './components/Homepage'
 import Dashboard from './components/Dashboard'
 import EditProperty from './components/EditProperty'
+import Profile from './components/Profile'
 
 class App extends Component {
   constructor(props) {
@@ -97,6 +98,13 @@ class App extends Component {
 
         <Route exact path="/editproperty/" render={() => (
           <EditProperty
+          />
+        )}
+        />
+
+        <Route exact path="/profile" render={() => (
+          <Profile
+            currentUser={this.state.currentUser}
           />
         )}
         />

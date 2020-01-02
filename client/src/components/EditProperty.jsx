@@ -14,6 +14,8 @@ class EditProperty extends Component {
         price: null,
         rooms: 0,
         bathrooms: 0,
+        parking_spaces: 0,
+        details: "",
         photo: ""
       }
     }
@@ -28,6 +30,8 @@ class EditProperty extends Component {
         price: response.price,
         rooms: response.rooms,
         bathrooms: response.bathrooms,
+        parking_spaces: response.parking_spaces,
+        details: response.details,
         photo: response.photo
       },
       property: response,
@@ -45,6 +49,8 @@ class EditProperty extends Component {
         price: 0,
         rooms: 0,
         bathrooms: 0,
+        parking_spaces: 0,
+        details: "",
         photo: ""
       }
     }))
@@ -111,7 +117,7 @@ class EditProperty extends Component {
               name="rooms"
               type="text"
               value={parseInt(this.state.propertyForm.rooms)}
-              placeholder="rooms"
+              placeholder="Bedrooms"
               onChange={this.handleChange} />
 
             <p>Bathrooms:</p>
@@ -122,6 +128,22 @@ class EditProperty extends Component {
               placeholder="bathrooms"
               onChange={this.handleChange} />
 
+            <p>Parking Spaces:</p>
+            <input
+              name="parking_spaces"
+              type="text"
+              value={parseInt(this.state.propertyForm.parking_spaces)}
+              placeholder="Parking Spaces"
+              onChange={this.handleChange} />
+
+            <p>Description:</p>
+            <input
+              name="details"
+              type="text"
+              value={this.state.propertyForm.details}
+              placeholder="Description"
+              onChange={this.handleChange} />
+
             <p>Photo:</p>
             <input
               name="photo"
@@ -129,7 +151,6 @@ class EditProperty extends Component {
               value={this.state.propertyForm.photo}
               placeholder="Photo"
               onChange={this.handleChange} />
-
 
             <button>Update Property</button>
           </form>

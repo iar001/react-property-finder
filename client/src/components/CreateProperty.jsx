@@ -16,6 +16,8 @@ class CreateProperty extends Component {
         price: 0,
         rooms: 0,
         bathrooms: 0,
+        parking_spaces: 0,
+        details: "",
         photo: ""
       }
     }
@@ -32,6 +34,8 @@ class CreateProperty extends Component {
         price: "",
         rooms: "",
         bathrooms: "",
+        parking_spaces: 0,
+        details: "",
         photo: ""
       }
     }))
@@ -88,7 +92,7 @@ class CreateProperty extends Component {
               name="rooms"
               type="text"
               value={parseInt(this.state.propertyForm).rooms}
-              placeholder="Rooms"
+              placeholder="Bedrooms"
               onChange={this.handleChange} />
 
             <p>Bathrooms:</p>
@@ -97,6 +101,22 @@ class CreateProperty extends Component {
               type="text"
               value={parseInt(this.state.propertyForm).bathrooms}
               placeholder="Bathrooms"
+              onChange={this.handleChange} />
+
+            <p>Parking Spaces:</p>
+            <input
+              name="parking_spaces"
+              type="text"
+              value={parseInt(this.state.propertyForm).parking_spaces}
+              placeholder="Parking Spaces"
+              onChange={this.handleChange} />
+
+            <p>Description:</p>
+            <input
+              name="details"
+              type="text"
+              value={this.state.propertyForm.details}
+              placeholder="Description"
               onChange={this.handleChange} />
 
             <p>Photo:</p>
@@ -108,7 +128,7 @@ class CreateProperty extends Component {
               onChange={this.handleChange} />
 
 
-            <Button variant="outline-primary">Create Property</Button>
+            <button variant="outline-primary">Create Property</button>
           </form>
         </div>
       </div>

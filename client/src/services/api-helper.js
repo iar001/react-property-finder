@@ -31,6 +31,18 @@ export const verifyUser = async () => {
   return false
 }
 
+export const oneUser = async (id) => {
+  const resp = await api.get(`/users/${id}`)
+  return resp.data
+}
+
+export const updateUser = async (id, data) => {
+  const resp = await api.put(`/users/${id}`, { user: data })
+  return resp.data
+}
+
+
+
 ///////Properties////////
 
 export const createProperty = async (data) => {

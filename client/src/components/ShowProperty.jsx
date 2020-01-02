@@ -26,23 +26,42 @@ class ShowProperty extends Component {
         <img src={this.state.property.photo}></img>
         <div class="property-info">
           <div class="property-info-left">
-            <div>
-              <p>Address: {this.state.property.address}</p>
-              <p>For Sale</p>
+
+            <div class="property-info-left-top">
+              <div>
+                <p>{this.state.property.address}</p>
+                <h3>${this.state.property.price}</h3>
+              </div>
+              <div class="property-categories">
+                <div>
+                  <p id="font">Bedrooms</p>
+                  <p>{this.state.property.rooms}</p>
+                </div>
+                <div>
+                  <p id="font">Bathrooms</p>
+                  <p>{this.state.property.bathrooms}</p>
+                </div>
+                <div>
+                  <p id="font">Parking Spaces</p>
+                  <p>{this.state.property.parking_spaces}</p>
+                </div>
+              </div>
             </div>
-            <div>
-              <div>
-                <p>Rooms: {this.state.property.rooms}</p>
-              </div>
-              <div>
-                <p>Bathrooms: {this.state.property.bathrooms}</p>
-              </div>
-              <div>
-                <p>Parking Spaces</p>
-              </div>
-              <h3>Name: {this.state.property.name}</h3>
-              <p>Price: ${this.state.property.price}</p>
+
+            <div class="property-info-left-middle">
+              <p>Est. Monthly Payments: ${((this.state.property.price) * 0.8 / 360).toFixed(0)}</p>
+              <Button>Can I Afford This Property?</Button>
             </div>
+
+            <div class="property-info-left-bottom">
+              <h3>{this.state.property.name}</h3>
+              <h4>Property Description</h4>
+              <div id="property-details">
+                <p>{this.state.property.details}</p>
+              </div>
+
+            </div>
+
           </div>
           <div class="property-info-right">
             <div>

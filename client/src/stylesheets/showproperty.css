@@ -4,15 +4,54 @@
 
 img {
   width: 90vw;
-  height: 60vh; 
+  height: 50vh; 
   background-size: cover;
 }
 
 .property-info {
   display: flex;
   justify-content: space-around;
+  padding: 30px;
 }
 
 .property-info-left {
-  /* font-weight: bold; */
+  width: 50vw;
+}
+.property-info-left-top {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 2px solid lightgray;
+  
+}
+
+.property-categories {
+  display: flex;
+  margin-left: 5vw;
+  background-color: lightgreen;
+  justify-content: space-around;
+  width: 100%;
+}
+
+#font {
+  font-weight: bold;
+}
+
+.property-info-left-middle {
+  margin-top: 10px;
+  border-bottom: 2px solid lightgray;
+  display: flex;
+  justify-content: space-between;
+  color: green;
+}
+
+.property-info-left-bottom {
+  margin-top: 10px;
+  text-align: left;
+  border-bottom: 2px solid lightgray;
+  width: 100%;
+}
+
+#property-details {
+  height: 150px;
+  overflow: hidden;
 }

@@ -15,6 +15,7 @@ class Profile extends Component {
         price: 0,
         rooms: 0,
         bathrooms: 0,
+        parking_spaces: 0,
         photo: ""
       }
     }
@@ -41,10 +42,11 @@ class Profile extends Component {
                 <th>#</th>
                 <th>Name</th>
                 <th>Address</th>
-                <th>Rooms</th>
+                <th>Bedrooms</th>
                 <th>Bathrooms</th>
-                <th>See</th>
-                <th>Edit</th>
+                <th>Parking Spaces</th>
+                <th>Description</th>
+                <th>Show/Edit</th>
               </tr>
             </thead>
             <tbody>
@@ -56,11 +58,13 @@ class Profile extends Component {
                     <td>{property.address}</td>
                     <td>{property.rooms}</td>
                     <td>{property.bathrooms}</td>
+                    <td>{property.parking_spaces}</td>
+                    <td>{property.details}</td>
                     <Link to={`/show-property/${property.id}`}>
                       <td>Show</td>
                     </Link>
                     <Link to={`/editproperty/${property.id}`}>
-                      <td>Edit</td>
+                      <td>Update</td>
                     </Link>
                   </tr>
                 </React.Fragment>

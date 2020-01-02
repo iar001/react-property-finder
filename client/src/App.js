@@ -12,6 +12,7 @@ import Dashboard from './components/Dashboard'
 import EditProperty from './components/EditProperty'
 import Profile from './components/Profile'
 import ShowProperty from './components/ShowProperty'
+import Account from './components/Account'
 
 class App extends Component {
   constructor(props) {
@@ -111,6 +112,13 @@ class App extends Component {
 
         <Route exact path="/profile" render={() => (
           <Profile
+            currentUser={this.state.currentUser}
+          />
+        )}
+        />
+
+        <Route exact path="/editaccount/:userId" render={() => (
+          <Account
             currentUser={this.state.currentUser}
           />
         )}

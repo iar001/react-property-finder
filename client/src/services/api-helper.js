@@ -43,8 +43,13 @@ export const showProperties = async () => {
   return resp.data
 }
 
+export const oneProperty = async (id) => {
+  const resp = await api.get(`/properties/${id}`)
+  return resp.data
+}
+
 export const updateProperty = async (id, data) => {
-  const resp = await api.put(`/properties/${id}`, { review: data })
+  const resp = await api.put(`/properties/${id}`, { property: data })
   return resp.data
 }
 

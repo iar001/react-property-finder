@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'react-bootstrap'
 
 // This component handles our register form
 const Register = (props) => {
@@ -12,15 +13,15 @@ const Register = (props) => {
         <form onSubmit={props.handleRegister} >
           <p>First Name:</p>
           <input
-            name="firstname"
+            name="First Name"
             type="text"
             value={props.formData.firstname}
             placeholder="First Name"
             onChange={props.handleChange} />
-          
+
           <p>Last Name:</p>
           <input
-            name="lastname"
+            name="Last Name"
             type="text"
             value={props.formData.lastname}
             placeholder="Last Name"
@@ -28,7 +29,7 @@ const Register = (props) => {
 
           <p>Username:</p>
           <input
-            name="username"
+            name="Username"
             type="text"
             value={props.formData.username}
             placeholder="username"
@@ -44,12 +45,12 @@ const Register = (props) => {
 
           <p>Email:</p>
           <input
-            name="email"
+            name="Email"
             type="text"
             value={props.formData.email}
             placeholder="email"
             onChange={props.handleChange} />
-          
+
           <p>Location:</p>
           <input
             name="location"
@@ -58,8 +59,8 @@ const Register = (props) => {
             placeholder="Location"
             onChange={props.handleChange} />
 
-          
-          <button>Register</button>
+
+          <Button variant="outline-primary">Register</Button>
         </form>
       </div>
     </div>

@@ -25,11 +25,9 @@ body {
   box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
 }
 
-/* .table-responsive {
-  display: center;
-  margin-left: 30%;
-  margin-top: 10%;
-} */
+.table-responsive {
+  width: 150%;
+}
 
 .sidebar-sticky {
   position: relative;

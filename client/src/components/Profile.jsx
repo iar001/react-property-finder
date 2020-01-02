@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link, withRouter, Route } from 'react-router-dom';
 import { userProperties } from '../services/api-helper';
+import { Table } from 'react-bootstrap';
 import '../stylesheets/profile.css';
 
 class Profile extends Component {
@@ -21,7 +22,6 @@ class Profile extends Component {
 
   async componentDidMount() {
     const properties = await userProperties(this.props.currentUser.id)
-    console.log(properties)
     this.setState({
       properties
     })
@@ -35,7 +35,7 @@ class Profile extends Component {
         <div class="table-profile">
           <h3>Your Properties</h3>
 
-          <table class="table table-striped table-sm">
+          <Table striped hover >
             <thead>
               <tr>
                 <th>#</th>
@@ -43,7 +43,8 @@ class Profile extends Component {
                 <th>Address</th>
                 <th>Rooms</th>
                 <th>Bathrooms</th>
-                <th>Photo</th>
+                <th>See</th>
+                <th>Edit</th>
               </tr>
             </thead>
             <tbody>
@@ -55,23 +56,18 @@ class Profile extends Component {
                     <td>{property.address}</td>
                     <td>{property.rooms}</td>
                     <td>{property.bathrooms}</td>
-                    {/* <td>{property.photo}</td> */}
-                    <td>Edit</td>
+                    <Link to={`/show-property/${property.id}`}>
+                      <td>Show</td>
+                    </Link>
+                    <Link to={`/editproperty/${property.id}`}>
+                      <td>Edit</td>
+                    </Link>
                   </tr>
                 </React.Fragment>
               ))
               }
-              <tr>
-                <td>1,001</td>
-                <td>Lorem</td>
-                <td>ipsum</td>
-                <td>dolor</td>
-                <td>sit</td>
-                <td>stand</td>
-              </tr>
-
             </tbody>
-          </table>
+          </Table>
         </div>
 
       </div>

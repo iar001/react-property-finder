@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 
 
 // This component handles our login form and has a link to the register form
@@ -33,7 +34,9 @@ const Login = (props) => {
             onChange={props.handleChange} />
           <hr />
           <button>Login</button>
-          <Link to="/register"><button>Go to Register</button></Link>
+          <Link to="/register">
+            <Button>Go to Register</Button>
+          </Link>
         </form>
       </div>
       
@@ -42,3 +45,4 @@ const Login = (props) => {
 }
 
 export default withRouter(Login);
+

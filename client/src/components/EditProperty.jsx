@@ -1,24 +1,38 @@
 import React, { Component } from 'react';
 import { Link, withRouter, Route } from 'react-router-dom';
-import { updateProperty, destroyProperty } from '../services/api-helper';
+import { updateProperty, destroyProperty, oneProperty, userProperties } from '../services/api-helper';
 
 class EditProperty extends Component {
   constructor(props) {
     super(props);
     this.state = {
       properties: [],
+      property: [],
       propertyForm: {
         name: "",
         address: "",
-        price: 0,
+        price: null,
         rooms: 0,
         bathrooms: 0,
         photo: ""
-      },
-      property: []
+      }
     }
   }
-
+  async componentDidMount() {
+    const response = await oneProperty(parseInt(this.props.match.params.propertyId))
+    // const properties = await userProperties(this.props.currentUser.id)
+    this.setState({
+      propertyForm: {
+        name: response.name,
+        address: response.address,
+        price: response.price,
+        rooms: response.rooms,
+        bathrooms: response.bathrooms,
+        photo: response.photo
+      },
+      property: response,
+    })
+  }
   updateProperty = async (e) => {
     e.preventDefault()
     const propertyForm = this.state.propertyForm
@@ -34,6 +48,8 @@ class EditProperty extends Component {
         photo: ""
       }
     }))
+    this.props.history.push(`/dashboard`)
+
   }
 
   deleteProperty = async () => {
@@ -41,6 +57,7 @@ class EditProperty extends Component {
     this.setState(prevState => ({
       properties: prevState.properties.filter(property => property.id !== this.props.match.params.propertyId)
     }))
+    this.props.history.push(`/dashboard`)
   }
 
 
@@ -85,7 +102,7 @@ class EditProperty extends Component {
             <input
               name="price"
               type="text"
-              value={parseInt(this.state.propertyForm).price}
+              value={parseInt(this.state.propertyForm.price)}
               placeholder="price"
               onChange={this.handleChange} />
 
@@ -93,7 +110,7 @@ class EditProperty extends Component {
             <input
               name="rooms"
               type="text"
-              value={parseInt(this.state.propertyForm).rooms}
+              value={parseInt(this.state.propertyForm.rooms)}
               placeholder="rooms"
               onChange={this.handleChange} />
 
@@ -101,7 +118,7 @@ class EditProperty extends Component {
             <input
               name="bathrooms"
               type="text"
-              value={parseInt(this.state.propertyForm).bathrooms}
+              value={parseInt(this.state.propertyForm.bathrooms)}
               placeholder="bathrooms"
               onChange={this.handleChange} />
 
@@ -116,6 +133,10 @@ class EditProperty extends Component {
 
             <button>Update Property</button>
           </form>
+
+          <button onClick={this.deleteProperty}>
+            Delete Property
+          </button>
         </div>
       </div>
 

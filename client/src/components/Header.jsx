@@ -23,11 +23,24 @@ class Header extends Component {
               <li class="nav-item active">
                 <Link to="/" class="nav-link" href="#">Home <span class="sr-only">(current)</span></Link>
               </li>
-              <li class="nav-item-active">
-                <Link to="/dashboard" class="nav-link">
-                  Dashboard
-              </Link>
-              </li>
+              {this.props.currentUser
+                ?
+                <>
+
+                  <div class="nav-item">
+                    <Link to="/dashboard" class="nav-link">
+                      Dashboard
+                      </Link>
+                  </div>
+                </>
+                :
+                <li class="nav-item">
+                  <Link to="/login" class="nav-link">
+                    Would be Dashboard
+                  </Link>
+                </li>
+              }
+
               <li class="nav-item">
                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Advertising</a>
               </li>

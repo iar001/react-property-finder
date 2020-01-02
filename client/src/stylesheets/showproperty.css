@@ -1,0 +1,18 @@
+.show-property {
+  padding: 60px;
+}
+
+img {
+  width: 90vw;
+  height: 60vh; 
+  background-size: cover;
+}
+
+.property-info {
+  display: flex;
+  justify-content: space-around;
+}
+
+.property-info-left {
+  /* font-weight: bold; */
+}

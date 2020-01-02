@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { Link, withRouter, Route } from 'react-router-dom';
 import { createProperty } from '../services/api-helper';
+import { Button } from 'react-bootstrap'
+import '../stylesheets/createproperty.css'
+
 
 class CreateProperty extends Component {
   constructor(props) {
@@ -32,6 +35,8 @@ class CreateProperty extends Component {
         photo: ""
       }
     }))
+    this.props.history.push(`/dashboard`)
+
   }
 
   handleChange = (e) => {
@@ -103,7 +108,7 @@ class CreateProperty extends Component {
               onChange={this.handleChange} />
 
 
-            <button>Create Property</button>
+            <Button variant="outline-primary">Create Property</Button>
           </form>
         </div>
       </div>

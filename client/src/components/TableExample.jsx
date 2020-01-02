@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import { Button, Navbar, } from 'react-bootstrap';
+import { Button, Navbar, Table} from 'react-bootstrap';
 import '../stylesheets/dashboard.css';
 import '../App.css'
 
 
-class Table extends Component {
+class TableExample extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -37,7 +37,7 @@ class Table extends Component {
           </div>
           <h2>Section title</h2>
           <div class="table-responsive">
-            <table class="table table-striped table-sm">
+          <Table striped bordered hover variant="dark">
               <thead>
                 <tr>
                   <th>#</th>
@@ -161,7 +161,7 @@ class Table extends Component {
                   <td>libero</td>
                 </tr>
               </tbody>
-            </table>
+            </Table>
           </div>
         </main>
 
@@ -171,4 +171,4 @@ class Table extends Component {
   }
 
 }
-export default withRouter(Table)
+export default withRouter(TableExample)

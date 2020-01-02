@@ -11,6 +11,7 @@ import Homepage from './components/Homepage'
 import Dashboard from './components/Dashboard'
 import EditProperty from './components/EditProperty'
 import Profile from './components/Profile'
+import ShowProperty from './components/ShowProperty'
 
 class App extends Component {
   constructor(props) {
@@ -96,8 +97,14 @@ class App extends Component {
         )}
         />
 
-        <Route exact path="/editproperty/" render={() => (
+        <Route exact path="/editproperty/:propertyId" render={() => (
           <EditProperty
+          />
+        )}
+        />
+
+        <Route exact path="/show-property/:propertyId" render={() => (
+          <ShowProperty
           />
         )}
         />

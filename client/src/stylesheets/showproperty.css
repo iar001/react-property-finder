@@ -17,6 +17,7 @@ img {
 .property-info-left {
   width: 50vw;
 }
+
 .property-info-left-top {
   display: flex;
   justify-content: space-around;
@@ -27,9 +28,9 @@ img {
 .property-categories {
   display: flex;
   margin-left: 5vw;
-  background-color: lightgreen;
+  /* background-color: lightslategray; */
   justify-content: space-around;
-  width: 100%;
+  width: 80%;
 }
 
 .property-categories img {
@@ -37,9 +38,6 @@ img {
   height: 50%;
   margin-top: 2px;
 }
-
-
-
 
 #font {
   font-weight: bold;
@@ -61,7 +59,7 @@ img {
 }
 
 #property-details {
-  height: 150px;
+  height: 170px;
   overflow: hidden;
 }
 
@@ -93,14 +91,13 @@ img {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   text-align: center;
-  height: 35vh;
   margin-bottom: 15px;
-  margin-right: 5px;
+  /* margin-right: 5px; */
   /* padding: 5px; */
 }
 
 .agent-properties img {
-  width: 30vw;
+  width: 28vw;
   height: 20vw;
   margin-bottom: 4px;
 }

@@ -39,27 +39,39 @@ class Profile extends Component {
           <Table striped hover >
             <thead>
               <tr>
-                <th>#</th>
+                {/* <th>#</th> */}
                 <th>Name</th>
                 <th>Address</th>
                 <th>Bedrooms</th>
                 <th>Bathrooms</th>
                 <th>Parking Spaces</th>
                 <th>Description</th>
-                <th>Show/Edit</th>
+                <th>For Sale</th>
+                <th>Show/Update</th>
               </tr>
             </thead>
             <tbody>
               {this.state.properties.map(property => (
                 <React.Fragment key={property.id} >
                   <tr>
-                    <td>{property.id}</td>
+                    {/* <td>{property.id}</td> */}
                     <td>{property.name}</td>
                     <td>{property.address}</td>
                     <td>{property.rooms}</td>
                     <td>{property.bathrooms}</td>
                     <td>{property.parking_spaces}</td>
                     <td>{property.details}</td>
+                    <td>{
+                      property.for_sale ?
+                        <>
+                          For Sale
+                        </>
+                        :
+                        <>
+                          For Rent
+                          </>
+                    }
+                    </td>
                     <Link to={`/show-property/${property.id}`}>
                       <td>Show</td>
                     </Link>
@@ -74,7 +86,7 @@ class Profile extends Component {
           </Table>
         </div>
 
-      </div>
+      </div >
     )
   }
 }

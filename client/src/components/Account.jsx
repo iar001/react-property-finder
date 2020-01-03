@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Link, withRouter, Route } from 'react-router-dom';
 import { Button } from 'react-bootstrap'
 import { oneUser, updateUser } from '../services/api-helper';
- 
+import '../stylesheets/login.css'
+
 
 // This component handles our register form
 class Account extends Component {
@@ -84,9 +85,14 @@ class Account extends Component {
         <div className="auth-container">
           <h1>Update Account</h1>
           <hr />
-          <form onSubmit={this.updateUser} >
+          <form
+            class="form-signin"
+            onSubmit={this.updateUser} >
             <p>First Name:</p>
             <input
+              required=""
+              autofocus=""
+              class="form-control"
               name="firstname"
               type="text"
               value={this.state.accountForm.firstname}
@@ -95,6 +101,9 @@ class Account extends Component {
 
             <p>Last Name:</p>
             <input
+              required=""
+              autofocus=""
+              class="form-control"
               name="lastname"
               type="text"
               value={this.state.accountForm.lastname}
@@ -103,7 +112,10 @@ class Account extends Component {
 
             <p>Username:</p>
             <input
-              name="Username"
+              required=""
+              autofocus=""
+              class="form-control"
+              name="username"
               type="text"
               value={this.state.accountForm.username}
               placeholder="username"
@@ -111,6 +123,9 @@ class Account extends Component {
 
             <p>Password:</p>
             <input
+              required=""
+              autofocus=""
+              class="form-control"
               name="password"
               type="password"
               value={this.state.accountForm.password}
@@ -119,7 +134,10 @@ class Account extends Component {
 
             <p>Email:</p>
             <input
-              name="Email"
+              required=""
+              autofocus=""
+              class="form-control"
+              name="email"
               type="text"
               value={this.state.accountForm.email}
               placeholder="email"
@@ -127,14 +145,20 @@ class Account extends Component {
 
             <p>Location:</p>
             <input
+              required=""
+              autofocus=""
+              class="form-control"
               name="location"
               type="text"
               value={this.state.accountForm.location}
               placeholder="Location"
               onChange={this.handleChange} />
-            
+
             <p>Profile Photo:</p>
             <input
+              required=""
+              autofocus=""
+              class="form-control"
               name="profile_photo"
               type="text"
               value={this.state.accountForm.profile_photo}
@@ -142,7 +166,11 @@ class Account extends Component {
               onChange={this.handleChange} />
 
 
-            <button variant="outline-primary">Update Account</button>
+            <button
+              class="btn btn-lg btn-primary btn-block"
+            >
+              Update Account
+              </button>
           </form>
         </div>
       </div>

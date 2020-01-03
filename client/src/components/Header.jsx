@@ -79,7 +79,7 @@ class Header extends Component {
                 <>
 
                   <div class="nav-link">
-                    <Link to="/profile/:userid">
+                    <Link to="/dashboard">
                       <li>Hello, {this.props.currentUser.username}</li>
                     </Link>
                   </div>

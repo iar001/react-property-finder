@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, withRouter} from 'react-router-dom';
+import { Link, withRouter, Route } from 'react-router-dom';
 import { oneProperty, oneUser, userProperties } from '../services/api-helper';
 import { Button } from 'react-bootstrap';
 import '../stylesheets/showproperty.css';
@@ -48,15 +48,15 @@ class ShowProperty extends Component {
               <div class="property-categories">
                 <div>
                   <i className="fa fa-bed fa-3x"></i>
-                  <p>{this.state.property.rooms}</p>
+                  <p>{this.state.property.rooms} Bedrooms</p>
                 </div>
                 <div>
                   <i className="fa fa-bath fa-3x"></i>
-                  <p>{this.state.property.bathrooms}</p>
+                  <p>{this.state.property.bathrooms} Bathrooms</p>
                 </div>
                 <div>
                   <i className="fa fa-car fa-3x"></i>
-                  <p>{this.state.property.parking_spaces}</p>
+                  <p>{this.state.property.parking_spaces} Parking Spots</p>
                 </div>
               </div>
             </div>
@@ -115,6 +115,7 @@ class ShowProperty extends Component {
                     </div>
                   </div>
                   <Link to={`/show-property/${property.id}`} >
+                    <h4>{property.id}</h4>
                     <h3>{property.name}</h3>
                   </Link>
                 </div>

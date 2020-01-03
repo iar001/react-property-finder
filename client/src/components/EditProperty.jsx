@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link, withRouter, Route } from 'react-router-dom';
 import { updateProperty, destroyProperty, oneProperty, userProperties } from '../services/api-helper';
+import '../stylesheets/login.css'
+
 
 class EditProperty extends Component {
   constructor(props) {
@@ -15,6 +17,7 @@ class EditProperty extends Component {
         rooms: 0,
         bathrooms: 0,
         parking_spaces: 0,
+        for_sale: true,
         details: "",
         photo: ""
       }
@@ -31,6 +34,7 @@ class EditProperty extends Component {
         rooms: response.rooms,
         bathrooms: response.bathrooms,
         parking_spaces: response.parking_spaces,
+        for_sale: response.for_sale,
         details: response.details,
         photo: response.photo
       },
@@ -50,6 +54,7 @@ class EditProperty extends Component {
         rooms: 0,
         bathrooms: 0,
         parking_spaces: 0,
+        for_sale: true,
         details: "",
         photo: ""
       }
@@ -87,9 +92,14 @@ class EditProperty extends Component {
         <div className="auth-container">
           <h1>Update Property</h1>
           <hr />
-          <form onSubmit={this.updateProperty} >
+          <form
+            class="form-signin"
+            onSubmit={this.updateProperty} >
             <p>Property Name:</p>
             <input
+              required=""
+              autofocus=""
+              class="form-control"
               name="name"
               type="text"
               value={this.state.propertyForm.name}
@@ -98,6 +108,9 @@ class EditProperty extends Component {
 
             <p>Address:</p>
             <input
+              required=""
+              autofocus=""
+              class="form-control"
               name="address"
               type="text"
               value={this.state.propertyForm.address}
@@ -106,6 +119,9 @@ class EditProperty extends Component {
 
             <p>Price:</p>
             <input
+              required=""
+              autofocus=""
+              class="form-control"
               name="price"
               type="text"
               value={parseInt(this.state.propertyForm.price)}
@@ -114,6 +130,9 @@ class EditProperty extends Component {
 
             <p>Rooms:</p>
             <input
+              required=""
+              autofocus=""
+              class="form-control"
               name="rooms"
               type="text"
               value={parseInt(this.state.propertyForm.rooms)}
@@ -122,6 +141,9 @@ class EditProperty extends Component {
 
             <p>Bathrooms:</p>
             <input
+              required=""
+              autofocus=""
+              class="form-control"
               name="bathrooms"
               type="text"
               value={parseInt(this.state.propertyForm.bathrooms)}
@@ -130,14 +152,30 @@ class EditProperty extends Component {
 
             <p>Parking Spaces:</p>
             <input
+              required=""
+              autofocus=""
+              class="form-control"
               name="parking_spaces"
               type="text"
               value={parseInt(this.state.propertyForm.parking_spaces)}
               placeholder="Parking Spaces"
               onChange={this.handleChange} />
 
+            <p>For Sale:</p>
+            <select
+              value={this.state.propertyForm.for_sale}
+              onChange={this.handleChange}
+              name="for_sale"
+            >
+              <option value={true}>Sale</option>
+              <option value={false}>Rent</option>
+            </select>
+
             <p>Description:</p>
             <input
+              required=""
+              autofocus=""
+              class="form-control"
               name="details"
               type="text"
               value={this.state.propertyForm.details}
@@ -146,6 +184,9 @@ class EditProperty extends Component {
 
             <p>Photo:</p>
             <input
+              required=""
+              autofocus=""
+              class="form-control"
               name="photo"
               type="text"
               value={this.state.propertyForm.photo}

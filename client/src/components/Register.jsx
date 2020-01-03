@@ -59,6 +59,14 @@ const Register = (props) => {
             placeholder="Location"
             onChange={props.handleChange} />
 
+            <p>Profile Photo:</p>
+          <input
+            name="profile_photo"
+            type="text"
+            value={props.formData.profile_photo}
+            placeholder="Profile Photo"
+            onChange={props.handleChange} />
+
 
           <Button variant="outline-primary">Register</Button>
         </form>

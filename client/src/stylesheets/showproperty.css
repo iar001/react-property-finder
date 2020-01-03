@@ -32,6 +32,15 @@ img {
   width: 100%;
 }
 
+.property-categories img {
+  width: 30%;
+  height: 50%;
+  margin-top: 2px;
+}
+
+
+
+
 #font {
   font-weight: bold;
 }
@@ -54,4 +63,59 @@ img {
 #property-details {
   height: 150px;
   overflow: hidden;
+}
+
+.property-info-right {
+  border: 2px solid lightgray;
+  width: 30%;
+  height: 30%;
+  padding: 10px;
+  
+}
+
+.property-info-right img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.each-property {
+  border: 2px solid lightgray;
+  margin: 2vh 2vh;
+}
+
+.each-property p {
+  font-size: 14px;
+}
+
+.agent-properties {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
+  height: 35vh;
+  margin-bottom: 15px;
+  margin-right: 5px;
+  /* padding: 5px; */
+}
+
+.agent-properties img {
+  width: 30vw;
+  height: 20vw;
+  margin-bottom: 4px;
+}
+
+#amenities {
+  display: flex;
+  justify-content: space-around;
+}
+
+#each-amenity {
+  display: flex;
+  width: 10%;
+  justify-content: space-evenly;
+}
+
+#each-amenity p {
+  font-size: 14px;
 }

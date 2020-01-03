@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link, withRouter, Route } from 'react-router-dom';
 import { Button } from 'react-bootstrap'
 import { oneUser, updateUser } from '../services/api-helper';
+ 
 
 // This component handles our register form
 class Account extends Component {
@@ -17,6 +18,7 @@ class Account extends Component {
         username: "",
         location: "",
         password: "",
+        profile_photo: ""
       }
     }
   }
@@ -30,6 +32,7 @@ class Account extends Component {
         username: response.username,
         location: response.location,
         password: response.password,
+        profile_photo: response.profile_photo
 
       },
       user: response
@@ -47,7 +50,8 @@ class Account extends Component {
         email: "",
         username: "",
         location: "",
-        password: ""
+        password: "",
+        profile_photo: ""
 
       }
     }))
@@ -127,6 +131,14 @@ class Account extends Component {
               type="text"
               value={this.state.accountForm.location}
               placeholder="Location"
+              onChange={this.handleChange} />
+            
+            <p>Profile Photo:</p>
+            <input
+              name="profile_photo"
+              type="text"
+              value={this.state.accountForm.profile_photo}
+              placeholder="Profile Photo"
               onChange={this.handleChange} />
 
 

@@ -63,7 +63,7 @@ class Profile extends Component {
                     <Link to={`/show-property/${property.id}`}>
                       <td>Show</td>
                     </Link>
-                    <Link to={`/editproperty/${property.id}`}>
+                    <Link to={`/edit-property/${property.id}`}>
                       <td>Update</td>
                     </Link>
                   </tr>

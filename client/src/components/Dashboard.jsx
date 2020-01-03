@@ -134,7 +134,7 @@ class Dashboard extends Component {
           />
         }
 
-{
+        {
           this.state.account && <Account
             currentUser={this.props.currentUser}
 

@@ -36,7 +36,7 @@ class Header extends Component {
                 :
                 <li class="nav-item">
                   <Link to="/login" class="nav-link">
-                    Would be Dashboard
+                    Users Only
                   </Link>
                 </li>
               }
@@ -52,11 +52,28 @@ class Header extends Component {
                   <a class="dropdown-item" href="#">Something else here</a>
                 </div>
               </li>
-              <li class="nav-item-active">
+              {/* <li class="nav-item-active">
                 <Link to="/register" class="nav-link">
                   Go to Register
               </Link>
-              </li>
+              </li> */}
+              {this.props.currentUser
+                ?
+                <>
+
+                  {/* <div class="nav-item">
+                    <Link to="/dashboard" class="nav-link">
+                      Dashboard
+                      </Link>
+                  </div> */}
+                </>
+                :
+                <li class="nav-item">
+                  <Link to="/register" class="nav-link">
+                    Go to Register
+              </Link>
+                </li>
+              }
               {this.props.currentUser
                 ?
                 <>

@@ -1,3 +1,6 @@
+@import url("http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css");
+
+
 .App {
   text-align: center;
 }
@@ -41,9 +44,7 @@
   display: left;
 }
 
-.uber {
-  
-}
+
 /* .wrapper{
   background: #50a3a2;
 background: -webkit-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);

@@ -1,26 +1,39 @@
 import React, { Component } from 'react';
-import { Link, withRouter, Route } from 'react-router-dom';
-import { oneProperty } from '../services/api-helper';
+import { Link, withRouter} from 'react-router-dom';
+import { oneProperty, oneUser, userProperties } from '../services/api-helper';
 import { Button } from 'react-bootstrap';
 import '../stylesheets/showproperty.css';
+
 
 class ShowProperty extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      property: []
-
+      property: [],
+      agent: [],
+      agentProperties: []
     }
   }
 
   async componentDidMount() {
     const property = await oneProperty(this.props.match.params.propertyId)
+    const agent = await oneUser(property.user_id)
+    const agentProperties = await userProperties(property.user_id)
     this.setState({
-      property
+      property,
+      agent,
+      agentProperties
     })
   }
 
+
+  refreshPage = (id) => {
+    window.location.reload(`/show-property/${id}`);
+  }
+
+
   render() {
+    // const { agent } = this.state.property.data.user
     return (
       <div class="show-property">
         <img src={this.state.property.photo}></img>
@@ -34,15 +47,15 @@ class ShowProperty extends Component {
               </div>
               <div class="property-categories">
                 <div>
-                  <p id="font">Bedrooms</p>
+                  <i className="fa fa-bed fa-3x"></i>
                   <p>{this.state.property.rooms}</p>
                 </div>
                 <div>
-                  <p id="font">Bathrooms</p>
+                  <i className="fa fa-bath fa-3x"></i>
                   <p>{this.state.property.bathrooms}</p>
                 </div>
                 <div>
-                  <p id="font">Parking Spaces</p>
+                  <i className="fa fa-car fa-3x"></i>
                   <p>{this.state.property.parking_spaces}</p>
                 </div>
               </div>
@@ -63,19 +76,53 @@ class ShowProperty extends Component {
             </div>
 
           </div>
+
           <div class="property-info-right">
             <div>
               <h3>Agent Information</h3>
-              <p>Test Company</p>
+              <p> {this.state.agent.firstname} {this.state.agent.lastname}</p>
+              <img src={this.state.agent.profile_photo} alt="Agent Profile Pic Pending" />
             </div>
             <div>
               <Button>Call</Button>
-              <Button>Email for More Details</Button>
+              <Button>Email</Button>
             </div>
           </div>
         </div>
+        <h3>Other Agent Properties</h3>
+        <div class="agent-properties">
+          {
+            this.state.agentProperties.map(property => (
+              <React.Fragment key={property.id} >
+                <div class="each-property">
+                  <Link
+                    to={`/`}
+                  >
+                    <img src={property.photo} />
+                  </Link>
+                  <div id="amenities">
+                    <div id="each-amenity">
+                      <i className="fa fa-bed text-muted"></i>
+                      <p className="text-muted">{property.rooms}</p>
+                    </div>
+                    <div id="each-amenity">
+                      <i className="fa fa-bath text-muted"></i>
+                      <p className="text-muted">{property.bathrooms}</p>
+                    </div>
+                    <div id="each-amenity">
+                      <i className="fa fa-car text-muted"></i>
+                      <p className="text-muted">{property.parking_spaces}</p>
+                    </div>
+                  </div>
+                  <Link to={`/show-property/${property.id}`} >
+                    <h3>{property.name}</h3>
+                  </Link>
+                </div>
+              </React.Fragment>
 
-
+            ))
+          }
+        </div>
       </div>
     )
   }

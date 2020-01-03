@@ -98,7 +98,7 @@ class App extends Component {
         )}
         />
 
-        <Route exact path="/editproperty/:propertyId" render={() => (
+        <Route exact path="/edit-property/:propertyId" render={() => (
           <EditProperty
           />
         )}
@@ -117,7 +117,7 @@ class App extends Component {
         )}
         />
 
-        <Route exact path="/editaccount/:userId" render={() => (
+        <Route exact path="/edit-account/:userId" render={() => (
           <Account
             currentUser={this.state.currentUser}
           />

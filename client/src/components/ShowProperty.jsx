@@ -89,7 +89,7 @@ class ShowProperty extends Component {
             </div>
           </div>
         </div>
-        <h3>Other Agent Properties</h3>
+        {/* <h3>Other Agent Properties</h3>
         <div class="agent-properties">
           {
             this.state.agentProperties.map(property => (
@@ -123,7 +123,7 @@ class ShowProperty extends Component {
 
             ))
           }
-        </div>
+        </div> */}
       </div>
     )
   }

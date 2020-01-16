@@ -88,82 +88,98 @@ class Account extends Component {
           <form
             class="form-signin"
             onSubmit={this.updateUser} >
-            <p>First Name:</p>
-            <input
-              required=""
-              autofocus=""
-              class="form-control"
-              name="firstname"
-              type="text"
-              value={this.state.accountForm.firstname}
-              placeholder="First Name"
-              onChange={this.handleChange} />
+            <div class="update-account-field">
+              <p>First Name:</p>
+              <input
+                required=""
+                autofocus=""
+                class="form-control"
+                name="firstname"
+                type="text"
+                value={this.state.accountForm.firstname}
+                placeholder="First Name"
+                onChange={this.handleChange} />
+            </div>
 
-            <p>Last Name:</p>
-            <input
-              required=""
-              autofocus=""
-              class="form-control"
-              name="lastname"
-              type="text"
-              value={this.state.accountForm.lastname}
-              placeholder="Last Name"
-              onChange={this.handleChange} />
+            <div class="update-account-field">
+              <p>Last Name:</p>
+              <input
+                required=""
+                autofocus=""
+                class="form-control"
+                name="lastname"
+                type="text"
+                value={this.state.accountForm.lastname}
+                placeholder="Last Name"
+                onChange={this.handleChange} />
+            </div>
 
-            <p>Username:</p>
-            <input
-              required=""
-              autofocus=""
-              class="form-control"
-              name="username"
-              type="text"
-              value={this.state.accountForm.username}
-              placeholder="username"
-              onChange={this.handleChange} />
+            <div class="update-account-field">
+              <p>Username:</p>
+              <input
+                required=""
+                autofocus=""
+                class="form-control"
+                name="username"
+                type="text"
+                value={this.state.accountForm.username}
+                placeholder="username"
+                onChange={this.handleChange} />
+            </div>
 
-            <p>Password:</p>
-            <input
-              required=""
-              autofocus=""
-              class="form-control"
-              name="password"
-              type="password"
-              value={this.state.accountForm.password}
-              placeholder="password"
-              onChange={this.handleChange} />
 
-            <p>Email:</p>
-            <input
-              required=""
-              autofocus=""
-              class="form-control"
-              name="email"
-              type="text"
-              value={this.state.accountForm.email}
-              placeholder="email"
-              onChange={this.handleChange} />
+            <div class="update-account-field">
+              <p>Password:</p>
+              <input
+                required=""
+                autofocus=""
+                class="form-control"
+                name="password"
+                type="password"
+                value={this.state.accountForm.password}
+                placeholder="password"
+                onChange={this.handleChange} />
+            </div>
 
-            <p>Location:</p>
-            <input
-              required=""
-              autofocus=""
-              class="form-control"
-              name="location"
-              type="text"
-              value={this.state.accountForm.location}
-              placeholder="Location"
-              onChange={this.handleChange} />
+            <div class="update-account-field">
+              <p>Email:</p>
+              <input
+                required=""
+                autofocus=""
+                class="form-control"
+                name="email"
+                type="text"
+                value={this.state.accountForm.email}
+                placeholder="email"
+                onChange={this.handleChange} />
+            </div>
 
-            <p>Profile Photo:</p>
-            <input
-              required=""
-              autofocus=""
-              class="form-control"
-              name="profile_photo"
-              type="text"
-              value={this.state.accountForm.profile_photo}
-              placeholder="Profile Photo"
-              onChange={this.handleChange} />
+            <div class="update-account-field">
+              <p>Location:</p>
+              <input
+                required=""
+                autofocus=""
+                class="form-control"
+                name="location"
+                type="text"
+                value={this.state.accountForm.location}
+                placeholder="Location"
+                onChange={this.handleChange} />
+            </div>
+
+            <div class="update-account-field">
+              <p>Profile Photo:</p>
+              <input
+                required=""
+                autofocus=""
+                class="form-control"
+                name="profile_photo"
+                type="text"
+                value={this.state.accountForm.profile_photo}
+                placeholder="Profile Photo"
+                onChange={this.handleChange} />
+            </div>
+
 
 
             <button

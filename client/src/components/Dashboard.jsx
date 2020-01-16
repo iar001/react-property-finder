@@ -23,7 +23,7 @@ class Dashboard extends Component {
   render() {
     return (
       <div class="dashboard">
-        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+        <nav class="d-none d-md-block bg-light sidebar">
 
           <div class="sidebar-sticky">
             <ul class="nav flex-column">

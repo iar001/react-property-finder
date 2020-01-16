@@ -29,5 +29,11 @@
 }
 
 .wrapper {
-  margin-top: 50px;
+  margin-top: 10vh;
+  padding-left: 25vw;
+
+}
+
+.update-account-field {
+  display: flex;
 }

@@ -63,7 +63,12 @@ class ShowProperty extends Component {
 
             <div class="property-info-left-middle">
               <p>Est. Monthly Payments: ${((this.state.property.price) * 0.8 / 360).toFixed(0)}</p>
-              <Button>Can I Afford This Property?</Button>
+              <a
+                target="_blank"
+                href="https://www.mortgagecalculator.org/">
+                <Button>Can I Afford This Property?</Button>
+              </a>
+
             </div>
 
             <div class="property-info-left-bottom">

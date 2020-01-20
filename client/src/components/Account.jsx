@@ -89,7 +89,7 @@ class Account extends Component {
             class="form-signin"
             onSubmit={this.updateUser} >
             <div class="update-account-field">
-              <p>First Name:</p>
+              <p>First:</p>
               <input
                 required=""
                 autofocus=""
@@ -102,7 +102,7 @@ class Account extends Component {
             </div>
 
             <div class="update-account-field">
-              <p>Last Name:</p>
+              <p>Last:</p>
               <input
                 required=""
                 autofocus=""
@@ -135,7 +135,7 @@ class Account extends Component {
                 autofocus=""
                 class="form-control"
                 name="password"
-                type="password"
+                type="text"
                 value={this.state.accountForm.password}
                 placeholder="password"
                 onChange={this.handleChange} />

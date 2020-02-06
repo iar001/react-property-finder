@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2020_01_03_195426) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "parking_spaces", default: 0
-    t.text "details"
+    t.text "details", default: "Need Description"
     t.boolean "for_sale", default: true
     t.index ["user_id"], name: "index_properties_on_user_id"
   end

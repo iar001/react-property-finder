@@ -89,7 +89,7 @@ class Account extends Component {
             class="form-signin"
             onSubmit={this.updateUser} >
             <div class="update-account-field">
-              <p>First:</p>
+              {/* <p>First:</p> */}
               <input
                 required=""
                 autofocus=""
@@ -102,7 +102,7 @@ class Account extends Component {
             </div>
 
             <div class="update-account-field">
-              <p>Last:</p>
+              {/* <p>Last:</p> */}
               <input
                 required=""
                 autofocus=""
@@ -115,7 +115,7 @@ class Account extends Component {
             </div>
 
             <div class="update-account-field">
-              <p>Username:</p>
+              {/* <p>Username:</p> */}
               <input
                 required=""
                 autofocus=""
@@ -129,7 +129,7 @@ class Account extends Component {
 
 
             <div class="update-account-field">
-              <p>Password:</p>
+              {/* <p>Password:</p> */}
               <input
                 required=""
                 autofocus=""
@@ -142,7 +142,7 @@ class Account extends Component {
             </div>
 
             <div class="update-account-field">
-              <p>Email:</p>
+              {/* <p>Email:</p> */}
               <input
                 required=""
                 autofocus=""
@@ -155,7 +155,7 @@ class Account extends Component {
             </div>
 
             <div class="update-account-field">
-              <p>Location:</p>
+              {/* <p>Location:</p> */}
               <input
                 required=""
                 autofocus=""
@@ -168,7 +168,7 @@ class Account extends Component {
             </div>
 
             <div class="update-account-field">
-              <p>Profile Photo:</p>
+              {/* <p>Profile Photo:</p> */}
               <input
                 required=""
                 autofocus=""

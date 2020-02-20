@@ -89,8 +89,8 @@ class ShowProperty extends Component {
               <img src={this.state.agent.profile_photo} alt="Agent Profile Pic Pending" />
             </div>
             <div>
-              <Button>Call</Button>
-              <Button>Email</Button>
+              <p>Email Agent</p>
+              <Button>{this.state.agent.email}</Button>
             </div>
           </div>
         </div>

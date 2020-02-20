@@ -1,7 +1,7 @@
 .table-profile {
-  width: 100%;
+  width: 85vw;
   margin-top: 10vh;
-  padding-left: 15vw;
+  margin-left: 15vw;
 }
 
 .table-profile th {

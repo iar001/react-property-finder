@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { withRouter, Link } from 'react-router-dom';
-// import { Button, Navbar } from 'react-bootstrap';
 import { showProperties } from '../services/api-helper'
 import '../stylesheets/homepage.css';
 
